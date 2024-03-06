@@ -3,14 +3,7 @@ name: Build for MacOS 13
 env:
   ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-# Controls when the workflow will run
 on:
-  # push:
-    # # Sequence of patterns matched against refs/tags
-    # tags:
-    # - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       tags:
@@ -18,9 +11,7 @@ on:
 
 jobs:
   build_mac_13:
-    if: ${{ github.actor == 'badabing2005' }}
-    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
-    # runs-on: macos-latest
+    # if: ${{ github.actor == 'badabing2005' }}
     runs-on: macos-13
 
     steps:
