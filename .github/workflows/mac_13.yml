@@ -3,11 +3,11 @@ name: Build for MacOS 13
 env:
   ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-on:
-  workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Build tags'
+on: push
+  # workflow_dispatch:
+  #   inputs:
+  #     tags:
+  #       description: 'Build tags'
 
 jobs:
   build_mac_13:
