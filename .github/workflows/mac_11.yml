@@ -21,8 +21,8 @@ jobs:
       - name: Update Homebrew
         run: brew update
 
-      - name: Install node, graphicsmagick, imagemagick, wxpython
-        run: brew install node graphicsmagick imagemagick wxpython
+      - name: Install graphicsmagick, imagemagick, wxpython
+        run: brew install --overwrite graphicsmagick imagemagick wxpython
 
       - name: Install create-dmg
         run: npm install --global create-dmg
