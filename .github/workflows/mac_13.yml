@@ -18,21 +18,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: List Cellar directory Again
-        run: |
-          ls /usr/local/Cellar
+      - name: Upgrade Homebrew
+        run: brew update && brew upgrade
 
-      - name: Install node graphicsmagick imagemagick
-        run: brew install node graphicsmagick imagemagick
+      - name: Install node, graphicsmagick, imagemagick, wxpython
+        run: brew install node graphicsmagick imagemagick wxpython
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      # - name: Set up Python 3.12
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.12'
 
-      - name: Install wxPython
-        # run: brew install wxpython
-        run: pip install wxPython
+      # - name: Install wxPython
+      #   run: brew install 
+      #   run: pip install wxPython
 
       - name: Install create-dmg
         run: npm install --global create-dmg
