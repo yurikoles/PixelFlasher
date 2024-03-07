@@ -21,7 +21,7 @@ jobs:
       - name: Update Homebrew
         run: brew update
 
-      - name: Overwrite Python
+      - name: Relink Python
         run: |
           brew unlink python@3.11 python@3.12 
           brew link --overwrite python@3.11 python@3.12
@@ -34,24 +34,17 @@ jobs:
       - name: Install create-dmg
         run: npm install --global create-dmg
 
-      # - name: Add Python 3.12 to PATH
-      #   run: export PATH=/usr/local/Cellar/python@3.12/bin:$PATH
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Create virtual environment
-        run: python3.12 -m venv myenv
-
-      - name: Activate virtual environment
-        run: source myenv/bin/activate
+          cache: 'pip'
 
       - name: Install requirements
-        run: python3.12 -m pip install -r requirements.txt
+        run: python -m pip install -r requirements.txt
 
       - name: List modules and their versions
-        run: python3.12 -m pip freeze
+        run: python -m pip freeze
 
       - name: Build application
         run: ./build.sh
