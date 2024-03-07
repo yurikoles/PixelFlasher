@@ -1,4 +1,4 @@
-name: Build for MacOS 13
+name: Build for macOS 13
 
 env:
   ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -21,8 +21,19 @@ jobs:
       - name: Update Homebrew
         run: brew update
 
+      - name: Overwrite Python
+        run: brew link --overwrite python@3.11 python@3.12
+
+      - name: Upgrade node
+        run: brew upgrade node
+
       - name: Install graphicsmagick, imagemagick, wxpython
-        run: brew install --overwrite graphicsmagick imagemagick wxpython
+        run: brew install --overwrite graphicsmagick imagemagick wxpython || true
+        env: 
+         HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
+
+      - name: Overwrite Python
+        run: brew link --overwrite python@3.11 python@3.12
 
       - name: Install create-dmg
         run: npm install --global create-dmg

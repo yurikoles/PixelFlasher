@@ -23,6 +23,11 @@ jobs:
 
       - name: Install graphicsmagick, imagemagick, wxpython
         run: brew install --overwrite graphicsmagick imagemagick wxpython
+        env: 
+          HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
+
+      - name: Overwrite Python 3.12
+        run: brew link --overwrite python@3.12
 
       - name: Install create-dmg
         run: npm install --global create-dmg
