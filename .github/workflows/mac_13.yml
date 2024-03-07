@@ -22,21 +22,24 @@ jobs:
         run: brew update
 
       - name: Overwrite Python
-        run: brew link --overwrite python@3.11 python@3.12
+        run: |
+          brew unlink python@3.11 python@3.12 
+          brew link --overwrite python@3.11 python@3.12
 
       - name: Install node, graphicsmagick, imagemagick, wxpython
         run: brew install --overwrite node graphicsmagick imagemagick wxpython || true
         env: 
          HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
 
-      - name: Overwrite Python
-        run: brew link --overwrite python@3.11 python@3.12
-
       - name: Install create-dmg
         run: npm install --global create-dmg
 
-      - name: Add Python 3.12 to PATH
-        run: export PATH=/usr/local/Cellar/python@3.12/bin:$PATH
+      # - name: Add Python 3.12 to PATH
+      #   run: export PATH=/usr/local/Cellar/python@3.12/bin:$PATH
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
       - name: Create virtual environment
         run: python3.12 -m venv myenv
