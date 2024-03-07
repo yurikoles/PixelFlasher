@@ -31,6 +31,9 @@ jobs:
           echo "getting directory list for /usr/local/Cellar"
           ls /usr/local/Cellar
 
+      - name: Install node graphicsmagick imagemagick
+        run: brew install node graphicsmagick imagemagick
+
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
@@ -39,9 +42,6 @@ jobs:
       - name: Install wxPython
         # run: brew install wxpython
         run: pip install wxPython
-
-      - name: Install node graphicsmagick imagemagick
-        run: brew install node graphicsmagick imagemagick
 
       - name: Install create-dmg
         run: npm install --global create-dmg
