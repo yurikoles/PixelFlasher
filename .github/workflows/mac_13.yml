@@ -27,7 +27,7 @@ jobs:
           brew link --overwrite python@3.11 python@3.12
 
       - name: Install node, graphicsmagick, imagemagick, wxpython
-        run: brew install --overwrite node graphicsmagick imagemagick wxpython || true
+        run: brew install node graphicsmagick imagemagick wxpython || true
         env: 
          HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
 
