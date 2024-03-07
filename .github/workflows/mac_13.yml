@@ -21,6 +21,7 @@ jobs:
       - name: Update Homebrew
         run: brew update
 
+      # To fix linkage issues during below brew install
       - name: Relink Python
         run: |
           brew unlink python@3.11 python@3.12 
@@ -29,6 +30,7 @@ jobs:
       - name: Install node, graphicsmagick, imagemagick, wxpython
         run: brew install node graphicsmagick imagemagick wxpython
         env: 
+         # To avoid a lot of unrelated software upgrades
          HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
 
       - name: Install create-dmg
