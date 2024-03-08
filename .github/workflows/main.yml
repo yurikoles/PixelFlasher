@@ -21,7 +21,6 @@ jobs:
   #                              build_windows
   # ---------------------------------------------------------------------------
   build_windows:
-    if: github.actor == 'badabing2005'
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
     runs-on: windows-latest
 
@@ -80,7 +79,6 @@ jobs:
   #                              build_windows_2019
   # ---------------------------------------------------------------------------
   build_windows_2019:
-    if: github.actor == 'badabing2005'
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
     runs-on: windows-2019
 
@@ -142,7 +140,6 @@ jobs:
   #                              build_ubuntu_20_04
   # ---------------------------------------------------------------------------
   build_ubuntu_20_04:
-    if: github.actor == 'badabing2005'
     runs-on: ubuntu-20.04
 
     steps:
@@ -208,7 +205,6 @@ jobs:
   #                              build_ubuntu_22_04
   # ---------------------------------------------------------------------------
   build_ubuntu_22_04:
-    if: github.actor == 'badabing2005'
     runs-on: ubuntu-latest
 
     steps:
@@ -274,7 +270,6 @@ jobs:
   #                              build_mac_13
   # ---------------------------------------------------------------------------
   build_mac_13:
-    if: github.actor == 'badabing2005'
     # runs-on: macos-latest
     runs-on: macos-13
 
@@ -348,7 +343,6 @@ jobs:
   #                              deploy
   # ---------------------------------------------------------------------------
   deploy:
-    if: github.actor == 'badabing2005'
     needs: [build_windows, build_windows_2019, build_ubuntu_20_04, build_ubuntu_22_04]
 
     runs-on: ubuntu-latest
