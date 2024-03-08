@@ -1,6 +1,6 @@
 name: Build for Ubuntu 22.04
 
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 
 jobs:
   build_ubuntu_22_04:

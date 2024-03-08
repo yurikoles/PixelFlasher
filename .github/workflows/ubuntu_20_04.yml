@@ -1,6 +1,6 @@
 name: Build for Ubuntu 20.04
 
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 
 jobs:
   build_ubuntu_20_04:

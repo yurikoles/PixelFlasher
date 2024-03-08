@@ -1,6 +1,6 @@
 name: Build for MacOS 11
 
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 
 jobs:
   build_mac_11:

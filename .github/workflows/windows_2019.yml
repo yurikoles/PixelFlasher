@@ -1,6 +1,6 @@
 name: Build for Windows 2019
 
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 
 jobs:
   build_windows:
