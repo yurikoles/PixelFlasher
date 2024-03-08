@@ -33,7 +33,6 @@ jobs:
     uses: ./.github/workflows/mac_13.yml
 
   deploy:
-    if: ${{ github.actor == 'badabing2005' }}
     needs: [
       build_windows_2019, 
       build_windows_2022,
