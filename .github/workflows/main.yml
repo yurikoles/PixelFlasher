@@ -1,6 +1,8 @@
 name: Build for All platforms
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  push:
 
 jobs:
   build_windows_2019:
