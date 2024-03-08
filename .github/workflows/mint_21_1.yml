@@ -1,8 +1,5 @@
 name: Build for Mint 21.1
 
-env:
-  ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 on: workflow_dispatch
 
 jobs:

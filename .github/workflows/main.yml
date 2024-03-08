@@ -1,8 +1,5 @@
 name: Build for All platforms
 
-env:
-  ACTIONS_RUNTIME_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 on: workflow_dispatch
 
 jobs:
