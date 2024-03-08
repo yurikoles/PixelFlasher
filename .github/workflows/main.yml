@@ -1,10 +1,12 @@
 name: Build for All platforms
 
-on: [workflow_dispatch, push]
+on:
+  workflow_dispatch:
+  push:
 
 jobs:
   build_windows_2019:
-    uses: ./.github/workflows/windows_2022.yml
+    uses: ./.github/workflows/windows_2019.yml
     
   build_windows_2022:
     uses: ./.github/workflows/windows_2022.yml
